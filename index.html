@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Networking Documentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <h2>Networking Docs</h2>
+      <ul>
+        <li>
+          <a href="#" onclick="loadContent('howitstarted.html')" class="active"
+            >How It Started</a
+          >
+        </li>
+        <li><a href="#">Future Topics (Placeholder)</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content" id="content-area">
+      <h2>Welcome to Networking Documentation</h2>
+      <p>Click on "How It Started" to load the content dynamically.</p>
+    </div>
+
+    <script>
+      // Function to load external content dynamically
+      function loadContent(page) {
+        fetch(page)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("content-area").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading content:", error));
+      }
+
+      // Automatically load 'howitstarted.html' on page load
+      window.onload = () => loadContent("howitstarted.html");
+    </script>
+  </body>
+</html>
