@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menu-toggle">☰ Menu</button>
+    
     <!-- Sidebar Navigation -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       <h2>Networking Docs</h2>
       <ul>
         <li>
@@ -26,19 +29,6 @@
       <p>Click on "How It Started" to load the content dynamically.</p>
     </div>
 
-    <script>
-      // Function to load external content dynamically
-      function loadContent(page) {
-        fetch(page)
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("content-area").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading content:", error));
-      }
-
-      // Automatically load 'howitstarted.html' on page load
-      window.onload = () => loadContent("howitstarted.html");
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
