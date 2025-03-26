@@ -5,55 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Networking Documentation</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Add a Google Font for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" id="menu-toggle">☰ Menu</button>
+    <!-- Mobile Menu Toggle with improved icon -->
+    <button class="menu-toggle" id="menu-toggle">
+      <span class="hamburger"></span>
+    </button>
 
     <!-- Sidebar Navigation -->
     <div class="sidebar" id="sidebar">
-      <h2>Computer Networking Docs</h2>
-      <ul>
-        <li>
-          <a href="#" onclick="loadContent('howitstarted.html')" class="active"
-            >How It Started</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            onclick="loadContent('clientServerArchitecture.html')"
-            class="active"
-            >Client Server Architecture</a
-          >
-        </li>
-        <li>
-          <a href="#" onclick="loadContent('protocol.html')" class="active"
-            >Protocols</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            onclick="loadContent('howDataIsTransffered.html')"
-            class="active"
-            >How data is transffered? Ip Address</a
-          >
-        </li>
-        <li>
-          <a href="#" onclick="loadContent('ports.html')" class="active"
-            >Port Number</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            onclick="loadContent('submarineCable.html')"
-            class="active"
-            >Submarine Cables: The Internet’s Secret Tunnels</a
-          >
-        </li>
-      </ul>
+      <div class="sidebar-header">
+        <h2>Computer Networking Docs</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#" onclick="loadContent('howitstarted.html')" class="active">
+              <span class="nav-icon">📚</span>
+              <span class="nav-text">How It Started</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="loadContent('clientServerArchitecture.html')">
+              <span class="nav-icon">🖥️</span>
+              <span class="nav-text">Client Server Architecture</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="loadContent('protocol.html')">
+              <span class="nav-icon">📋</span>
+              <span class="nav-text">Protocols</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="loadContent('howDataIsTransffered.html')">
+              <span class="nav-icon">📡</span>
+              <span class="nav-text">How data is transferred? IP Address</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="loadContent('ports.html')">
+              <span class="nav-icon">🔌</span>
+              <span class="nav-text">Port Number</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" onclick="loadContent('submarineCable.html')">
+              <span class="nav-icon">🌊</span>
+              <span class="nav-text">Submarine Cables: The Internet's Secret Tunnels</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <p>© 2025 Networking Docs</p>
+      </div>
     </div>
 
     <!-- Main Content Section -->

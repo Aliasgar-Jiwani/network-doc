@@ -1,13 +1,31 @@
 // Function to load external content dynamically
 function loadContent(page) {
+  // Store the current page in localStorage
+  localStorage.setItem("currentPage", page);
+
   fetch(page)
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("content-area").innerHTML = data;
-      // After loading content, check for sections to enable scrollspy
-      setupScrollSpy();
+
+      // Update active state in sidebar
+      updateActiveLink(page);
     })
     .catch((error) => console.error("Error loading content:", error));
+}
+
+// Update active link in sidebar
+function updateActiveLink(page) {
+  const links = document.querySelectorAll(".sidebar a");
+  links.forEach((link) => {
+    link.classList.remove("active");
+    if (
+      link.getAttribute("onclick") &&
+      link.getAttribute("onclick").includes(page)
+    ) {
+      link.classList.add("active");
+    }
+  });
 }
 
 // Setup mobile menu functionality
@@ -25,12 +43,14 @@ function setupMobileMenu() {
   menuToggle.addEventListener("click", () => {
     sidebar.classList.toggle("active");
     overlay.classList.toggle("active");
+    menuToggle.classList.toggle("active");
   });
 
   // Close menu when overlay is clicked
   overlay.addEventListener("click", () => {
     sidebar.classList.remove("active");
     overlay.classList.remove("active");
+    menuToggle.classList.remove("active");
   });
 
   // Close menu when a link is clicked (on mobile)
@@ -39,55 +59,36 @@ function setupMobileMenu() {
       if (window.innerWidth <= 900) {
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
+        menuToggle.classList.remove("active");
       }
     });
   });
-}
-
-// Setup scroll spy functionality
-function setupScrollSpy() {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".sidebar a");
-
-  if (sections.length > 0) {
-    window.onscroll = () => {
-      let current = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 100) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (
-          link.getAttribute("href") &&
-          link.getAttribute("href").includes(current)
-        ) {
-          link.classList.add("active");
-        }
-      });
-    };
-  }
 }
 
 // Handle window resize
 function handleResize() {
   const sidebar = document.getElementById("sidebar");
   const overlay = document.querySelector(".overlay");
+  const menuToggle = document.getElementById("menu-toggle");
 
   if (window.innerWidth > 900) {
     sidebar.classList.remove("active");
     if (overlay) overlay.classList.remove("active");
+    if (menuToggle) menuToggle.classList.remove("active");
   }
 }
 
 // Initialize everything when the page loads
 window.onload = () => {
-  // Load initial content
-  loadContent("howitstarted.html");
+  // Check if there's a stored page in localStorage
+  const storedPage = localStorage.getItem("currentPage");
+
+  // Load stored page or default to "howitstarted.html"
+  if (storedPage) {
+    loadContent(storedPage);
+  } else {
+    loadContent("howitstarted.html");
+  }
 
   // Setup mobile menu
   setupMobileMenu();
