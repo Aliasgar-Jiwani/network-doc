@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OSI Model: The Internet’s Recipe Book</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Simple inline CSS to style SVGs */
+      svg {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      text {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        text-anchor: middle;
+      }
+      .layer-box {
+        fill: #e0f7fa;
+        stroke: #0288d1;
+        stroke-width: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h1>OSI Model: The Internet’s Recipe Book 🌟</h1>
+      <p>
+        Hey there! Ever wonder how your phone grabs a video from YouTube or sends a message to a friend? It’s like cooking a yummy cake—there’s a recipe with steps! The <strong>OSI Model</strong> is that recipe for networks, with 7 layers working together to make internet magic happen. Let’s explore these layers like we’re on a fun cooking show!
+      </p>
+    </section>
+
+    <!-- Application Layer -->
+    <section id="application">
+      <h2>Application Layer: The Friendly Waiter 🍽️</h2>
+      <p>
+        Imagine you’re at a restaurant, and the waiter takes your order for a burger. That’s the <strong>Application Layer</strong>! It’s where you (or your apps, like a browser or email) talk to the network. It’s the friendly face that says, “Hey, I want a YouTube video!” and hands your request to the next layer.
+      </p>
+      <!-- SVG for Application Layer -->
+      <svg width="200" height="120" viewBox="0 0 200 120">
+        <rect x="20" y="20" width="160" height="80" class="layer-box" rx="10"/>
+        <text x="100" y="60" fill="#000">Application Layer</text>
+        <text x="100" y="80" fill="#0288d1">Browser, Email</text>
+      </svg>
+      <p><em>Look at that!</em> A blue box where your apps start the internet party!</p>
+    </section>
+
+    <!-- Presentation Layer -->
+    <section id="presentation">
+      <h2>Presentation Layer: The Fancy Chef 🎨</h2>
+      <p>
+        Now picture a chef who makes your burger look pretty—adding sauce and wrapping it nicely. The <strong>Presentation Layer</strong> does that for data! It makes sure the info looks good (like turning code into pictures) and keeps it safe (like locking it with a secret key). It’s all about making data ready for the trip!
+      </p>
+      <!-- SVG for Presentation Layer -->
+      <svg width="200" height="120" viewBox="0 0 200 120">
+        <rect x="20" y="20" width="160" height="80" class="layer-box" rx="10"/>
+        <text x="100" y="60" fill="#000">Presentation Layer</text>
+        <text x="100" y="80" fill="#0288d1">Format, Encrypt</text>
+      </svg>
+      <p><em>So cool!</em> A box where data gets dressed up and protected!</p>
+    </section>
+
+    <!-- Session Layer -->
+    <section id="session">
+      <h2>Session Layer: The Party Planner 🎉</h2>
+      <p>
+        Ever plan a game night with friends? The <strong>Session Layer</strong> is like that friend who sets up the call and keeps it going. It starts, manages, and ends connections between devices—like making sure your video chat doesn’t drop. It’s the one keeping the conversation alive!
+      </p>
+      <!-- SVG for Session Layer -->
+      <svg width="200" height="120" viewBox="0 0 200 120">
+        <rect x="20" y="20" width="160" height="80" class="layer-box" rx="10"/>
+        <text x="100" y="60" fill="#000">Session Layer</text>
+        <text x="100" y="80" fill="#0288d1">Start, Stop Chats</text>
+      </svg>
+      <p><em>Party time!</em> A box that keeps your device’s chats on track!</p>
+    </section>
+
+    <!-- Transport Layer -->
+    <section id="transport">
+      <h2>Transport Layer: The Delivery Truck 🚚</h2>
+      <p>
+        Okay, now imagine a truck driver splitting your burger order into boxes and making sure they all arrive. The <strong>Transport Layer</strong> does that for data! It breaks info into chunks, checks they get there okay, and fixes any mix-ups. It’s like a super-reliable delivery service!
+      </p>
+      <!-- SVG for Transport Layer -->
+      <svg width="200" height="120" viewBox="0 0 200 120">
+        <rect x="20" y="20" width="160" height="80" class="layer-box" rx="10"/>
+        <text x="100" y="60" fill="#000">Transport Layer</text>
+        <text x="100" y="80" fill="#0288d1">Send, Check Data</text>
+      </svg>
+      <p><em>Zoom!</em> A box sending data chunks safely to their destination!</p>
+    </section>
+
+    <!-- Network Layer -->
+    <section id="network">
+      <h2>Network Layer: The Map Maker 🗺️</h2>
+      <p>
+        Think of a GPS picking the best road for that delivery truck. The <strong>Network Layer</strong> is like that—it finds the fastest path for your data across the internet. It adds addresses (like IP addresses) to make sure your video goes to the right place, no detours!
+      </p>
+      <!-- SVG for Network Layer -->
+      <svg width="200" height="120" viewBox="0 0 200 120">
+        <rect x="20" y="20" width="160" height="80" class="layer-box" rx="10"/>
+        <text x="100" y="60" fill="#000">Network Layer</text>
+        <text x="100" y="80" fill="#0288d1">Find Path, Address</text>
+      </svg>
+      <p><em>Map magic!</em> A box guiding data to the right spot!</p>
+    </section>
+
+    <!-- Data Link Layer -->
+    <section id="data-link">
+      <h2>Data Link Layer: The Mail Sorter 📬</h2>
+      <p>
+        Picture a mailroom worker making sure letters go to the right house. The <strong>Data Link Layer</strong> does that for data—it packs it neatly and checks it’s sent correctly between nearby devices (like your router to your laptop). It’s like a super-organized post office!
+      </p>
+      <!-- SVG for Data Link Layer -->
+      <svg width="200" height="120" viewBox="0 0 200 120">
+        <rect x="20" y="20" width="160" height="80" class="layer-box" rx="10"/>
+        <text x="100" y="60" fill="#000">Data Link Layer</text>
+        <text x="100" y="80" fill="#0288d1">Pack, Check Nearby</text>
+      </svg>
+      <p><em>Sorted!</em> A box keeping data tidy for close-by chats!</p>
+    </section>
+
+    <!-- Physical Layer -->
+    <section id="physical">
+      <h2>Physical Layer: The Road Builder 🛠️</h2>
+      <p>
+        Ever think about the actual roads those trucks drive on? The <strong>Physical Layer</strong> is all about the real stuff—cables, wires, and signals that carry data. It’s like laying down the pavement so your internet can zoom from one place to another!
+      </p>
+      <!-- SVG for Physical Layer -->
+      <svg width="200" height="120" viewBox="0 0 200 120">
+        <rect x="20" y="20" width="160" height="80" class="layer-box" rx="10"/>
+        <text x="100" y="60" fill="#000">Physical Layer</text>
+        <text x="100" y="80" fill="#0288d1">Cables, Signals</text>
+      </svg>
+      <p><em>Built tough!</em> A box for the wires and signals that make it all go!</p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>The OSI Recipe Rocks! 🎸</h2>
+      <p>
+        And there you have it—the <strong>OSI Model</strong> is like a perfect recipe for internet fun! Each layer does its part, from taking your order to building the roads. Next time you’re streaming or chatting, give a little nod to these seven helpers—they’re the secret sauce behind your online adventures!
+      </p>
+    </section>
+  </body>
+</html>
