@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTTP Status Codes: The Web’s Report Cards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h2>HTTP Status Codes: The Web’s Report Cards 📝</h2>
+      <p>
+        Ever click a link and get a weird “404” message? Or wonder why a website
+        loads perfectly? It’s like getting a report card from the internet!
+        <strong>HTTP status codes</strong> are little notes the web sends back
+        to tell you how things went when you asked for a page or sent data. From
+        “Yay, it worked!” to “Oops, something’s wrong,” they keep the web’s
+        communication clear. Let’s dive into why these codes exist, check out
+        stars like 200 and 404, and explore the different code families. Ready
+        to decode the web’s grades? Let’s roll! 🎉
+      </p>
+    </section>
+
+    <!-- Why Status Codes Exist -->
+    <section id="why-status-codes">
+      <h2>Why Status Codes Exist: The Web’s Feedback 🗣️</h2>
+      <p>
+        Imagine ordering a smoothie at a café, and the barista says, “Got it!”
+        or “Sorry, we’re out of bananas.” HTTP status codes are like that
+        feedback, telling your browser (or app) what happened when it asked a
+        server for something, like a webpage or a post.
+      </p>
+      <p>
+        These codes are part of HTTP, the web’s order taker. When you visit a
+        site, your browser sends a <span class="highlight">request</span>, and
+        the server replies with a <span class="highlight">response</span> that
+        includes a status code—a three-digit number. It’s like a quick note
+        saying, “All good!” (200), “Page missing!” (404), or “Server’s down!”
+        (500). They help your browser know what to show you next, making the web
+        smooth and clear. Without them, it’d be like ordering a smoothie and
+        getting no reply—total confusion!
+      </p>
+      <p class="example">
+        Status codes are the web’s way of saying, “Here’s how it went!”
+      </p>
+    </section>
+
+    <!-- Key Status Codes -->
+    <section id="key-status-codes">
+      <h2>Star Codes: 200 and 404 🌟</h2>
+      <p>
+        Some status codes are super famous, like the cool kids of the web. Let’s
+        meet two big stars—200 and 404—that you’ve probably seen (or not seen)
+        in action!
+      </p>
+
+      <!-- 200 -->
+      <section id="code-200">
+        <h3>200 OK: The Gold Star 🥇</h3>
+        <p>
+          <strong>200 OK</strong> is the web’s gold star, saying, “Everything’s
+          perfect!” It means the server got your request and sent back exactly
+          what you asked for, like a webpage or a video, with no hiccups.
+        </p>
+        <p>
+          For example, when you load “netflix.com” and see the homepage, the
+          server’s sending a 200 code. It’s the most common code, quietly
+          working behind every successful click. Whether you’re streaming a show
+          or checking a tweet, 200’s like a teacher saying, “Great job, here’s
+          your page!”
+        </p>
+        <p class="example">200’s the A+ for a web job well done!</p>
+      </section>
+
+      <!-- 404 -->
+      <section id="code-404">
+        <h3>404 Not Found: The Missing Homework 📂</h3>
+        <p>
+          <strong>404 Not Found</strong> is the web’s “Oops, it’s gone!” note.
+          It means the server couldn’t find the page or thing you asked for,
+          like looking for a book in the library that’s not on the shelf.
+        </p>
+        <p>
+          For example, if you click a broken link or type “youtube.com/oops,”
+          you might see a 404 page saying, “Page not found.” It’s super famous
+          (think memes!) and tells your browser the server looked but came up
+          empty. It’s like getting a “Try again!” on your homework.
+        </p>
+        <p class="example">404’s the “Where’d it go?” for missing web stuff!</p>
+      </section>
+    </section>
+
+    <!-- Status Code Ranges -->
+    <section id="status-code-ranges">
+      <h2>Code Families: The Web’s Report Card Grades 📊</h2>
+      <p>
+        Status codes come in five big families, grouped by their first digit
+        (100s to 500s). Each family has a vibe, like different grades on a
+        report card, telling you what’s up with your web request. Let’s meet
+        them and some other cool codes!
+      </p>
+
+      <!-- 100 Range -->
+      <section id="100-range">
+        <h3>100s: The “Hold On” Notes ⏳</h3>
+        <p>
+          The <strong>100-range</strong> codes are like a teacher saying, “Hang
+          on, I’m checking your work!” They tell your browser the server got the
+          request and is working on it, but it’s not done yet. These are rare
+          and mostly for behind-the-scenes stuff.
+        </p>
+        <p>
+          A star here is <strong>100 Continue</strong>, which says, “Keep
+          sending your data, I’m ready!” For example, if you’re uploading a huge
+          file, the server might send a 100 to say, “All good, keep going!” You
+          don’t see these often, but they’re like a quick wink to keep things
+          moving.
+        </p>
+        <p class="example">100s are the “One sec, I’m on it!” for web chats!</p>
+      </section>
+
+      <!-- 200 Range -->
+      <section id="200-range">
+        <h3>200s: The “Nailed It” Grades 🎉</h3>
+        <p>
+          The <strong>200-range</strong> codes are the web’s high-fives, saying,
+          “Request successful!” They mean the server did what you asked, like
+          fetching a page or saving your data, and everything’s awesome.
+        </p>
+        <p>
+          Besides <strong>200 OK</strong>, there’s <strong>201 Created</strong>,
+          which pops up when you add something new, like posting a photo (e.g.,
+          on Instagram). Another is <strong>204 No Content</strong>, when the
+          server’s like, “Done, but nothing to show!” (e.g., deleting a post).
+          These are the happy codes you want!
+        </p>
+        <p class="example">200s are the “You rock!” for web wins!</p>
+      </section>
+
+      <!-- 300 Range -->
+      <section id="300-range">
+        <h3>300s: The “Go Over There” Directions 🗺️</h3>
+        <p>
+          The <strong>300-range</strong> codes are like a teacher pointing you
+          to another desk. They tell your browser the thing you want is
+          somewhere else, often redirecting you to a new page.
+        </p>
+        <p>
+          A common one is <strong>301 Moved Permanently</strong>, which says,
+          “This page moved for good!” (e.g., a website changes its address).
+          Another is <strong>302 Found</strong>, a temporary redirect, like
+          “Check this other page for now!” For example, if a shop’s site moves
+          to a new URL, a 301 sends you there automatically.
+        </p>
+        <p class="example">300s are the “Head this way!” for web detours!</p>
+      </section>
+
+      <!-- 400 Range -->
+      <section id="400-range">
+        <h3>400s: The “You Messed Up” Warnings ⚠️</h3>
+        <p>
+          The <strong>400-range</strong> codes are like getting a note saying,
+          “Oops, you did something wrong!” They mean the problem’s on your
+          end—like a bad request or wrong address—and the server can’t help.
+        </p>
+        <p>
+          Besides <strong>404 Not Found</strong>, there’s
+          <strong>400 Bad Request</strong>, when your request is messy (e.g., a
+          broken form). Another is <strong>403 Forbidden</strong>, like being
+          told, “No entry!” (e.g., trying to access a private page). For
+          example, if you type a weird URL, you might get a 400 saying, “That’s
+          not right!”
+        </p>
+        <p class="example">400s are the “Try again!” for your web oopsies!</p>
+      </section>
+
+      <!-- 500 Range -->
+      <section id="500-range">
+        <h3>500s: The “Server’s Sick” Alerts 🚨</h3>
+        <p>
+          The <strong>500-range</strong> codes are like a teacher saying,
+          “Uh-oh, the school’s printer broke!” They mean something went wrong on
+          the server’s side, so it can’t do what you asked.
+        </p>
+        <p>
+          A big one is <strong>500 Internal Server Error</strong>, the server’s
+          “I’m confused!” note (e.g., a website crashes). Another is
+          <strong>503 Service Unavailable</strong>, when the server’s too busy
+          or down, like “Come back later!” For example, if a site’s overloaded
+          during a sale, you might see a 503.
+        </p>
+        <p class="example">500s are the “Server’s having a bad day!” alerts!</p>
+      </section>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>Status Codes Keep the Web Talking! 🗨️</h2>
+      <p>
+        And that’s the deal with <strong>HTTP status codes</strong>—the web’s
+        report cards that tell you how your clicks and posts are doing! From
+        200’s gold stars to 404’s missing pages, and the 100s to 500s families,
+        they keep the web’s conversations clear and fun. Next time you surf a
+        site or hit an error, give a nod to these codes—they’re the teachers
+        grading the internet’s homework! 🌟
+      </p>
+    </section>
+  </body>
+</html>

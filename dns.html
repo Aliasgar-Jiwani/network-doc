@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DNS: The Internet’s Phone Book</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h1>DNS: The Internet’s Phone Book 📘</h1>
+      <p>
+        Ever wonder how typing “google.com” magically takes you to the right website? It’s like the internet has a giant phone book, and that’s <strong>DNS</strong>—the Domain Name System! DNS turns easy names like “youtube.com” into number addresses computers understand. We’ll explore how it works, what makes up a domain name, the big-deal root servers, and even try a fun activity to snoop on Google’s address. Ready to flip through the internet’s contacts? Let’s dive in! 🚀
+      </p>
+    </section>
+
+    <!-- What is DNS? -->
+    <section id="what-is-dns">
+      <h2>What’s DNS? The Web’s Name Finder 🕵️</h2>
+      <p>
+        DNS is like the internet’s phone book, matching friendly names (like “netflix.com”) to number addresses called <span class="highlight">IP addresses</span> (like 192.0.2.1) that computers use to find each other. Without DNS, you’d have to memorize a bunch of numbers to visit your favorite sites—yikes!
+      </p>
+      <p>
+        When you type a website name, DNS jumps in to look up its IP address, so your browser can connect to the right server. It’s like calling a friend by name, and DNS finds their phone number super fast. DNS is the unsung hero that makes the web easy to navigate!
+      </p>
+      <p class="example">DNS is the web’s matchmaker for names and numbers!</p>
+    </section>
+
+    <!-- How Does DNS Work? -->
+    <section id="how-dns-works">
+      <h2>How DNS Works: The Name Hunt 🗺️</h2>
+      <p>
+        So, how does DNS find the right address? It’s like a treasure hunt with a team of helpers! When you enter “google.com,” your device starts asking around to get the IP address.
+      </p>
+      <p>
+        First, your device checks with a <span class="highlight">DNS resolver</span> (like your internet provider’s server). The resolver asks a series of DNS servers: it starts with <strong>root servers</strong> (the big bosses), then moves to <strong>TLD servers</strong> (for “.com”), and finally hits the <strong>authoritative server</strong> for “google.com,” which gives the IP address (e.g., 142.250.190.78). Your browser uses that to load the site, all in a split second! It’s like a relay race where each runner passes the answer to the next until you get the prize.
+      </p>
+      <p class="example">DNS runs a speedy hunt to find your site’s address!</p>
+    </section>
+
+    <!-- Domain Name Parts -->
+    <section id="domain-parts">
+      <h2>Subdomain, Second-Level Domain, Top-Level Domain: The Name Puzzle 🧩</h2>
+      <p>
+        A domain name like “mail.google.com” is like a puzzle with pieces that DNS puts together. Each part has a job, and they fit into a hierarchy to make names clear and organized.
+      </p>
+      <p>
+        - <strong>Subdomain</strong>: The “mail” part is a subdomain, like a specific room in Google’s house. It points to a smaller section, like “blog.company.com” for a blog.  
+        - <strong>Second-Level Domain</strong>: The “google” part is the main name, like the family name of the website. It’s the core brand or identity.  
+        - <strong>Top-Level Domain (TLD)</strong>: The “.com” is the TLD, like the neighborhood the site lives in. Others include “.org,” “.edu,” or country codes like “.uk.”  
+        Together, they form the full address DNS uses to find the right server, like a map leading to the exact spot!
+      </p>
+      <p class="example">Domain names are puzzles DNS solves to find your site!</p>
+    </section>
+
+    <!-- Root DNS Servers -->
+    <section id="root-dns-servers">
+      <h2>Root DNS Servers: The Big Bosses 🌳</h2>
+      <p>
+        Root DNS servers are like the grand librarians of the internet, sitting at the top of the DNS tree. They’re the first stop in the name hunt, pointing to the right TLD servers (like “.com” or “.org”) to keep the search going.
+      </p>
+      <p>
+        There are 13 root server groups worldwide, run by organizations listed at <a href="https://root-servers.org/" target="_blank">root-servers.org</a>. They don’t know every website’s IP address but know where to send the resolver next, like saying, “Check the ‘.com’ section!” For example, when you visit “amazon.com,” the root server directs the query to the “.com” TLD server, which then finds Amazon’s details. They’re the quiet heroes keeping DNS humming!
+      </p>
+      <p class="example">Root servers are the wise guides starting the DNS hunt!</p>
+    </section>
+
+    <!-- ICANN and TLDs -->
+    <section id="icann-tlds">
+      <h2>ICANN and TLDs: The Name Keepers 📚</h2>
+      <p>
+        Ever wonder who decides what “.com” or “.org” means? That’s <strong>ICANN</strong>, the Internet Corporation for Assigned Names and Numbers, like the internet’s name librarian. They manage the list of TLDs and make sure domain names stay organized.
+      </p>
+      <p>
+        ICANN, found at <a href="https://www.icann.org/" target="_blank">icann.org</a>, oversees TLDs like “.com,” “.org,” “.net,” and even fun ones like “.pizza” or “.shop.” They work with registries to store and assign these TLDs, so when you buy “myblog.com,” ICANN’s rules keep it unique. It’s like a big filing cabinet ensuring every website has its own special name!
+      </p>
+      <p class="example">ICANN’s the keeper of the web’s name collection!</p>
+    </section>
+
+    <!-- dig google.com Activity -->
+    <section id="dig-activity">
+      <h2>Try It: dig google.com 🕵️‍♂️</h2>
+      <p>
+        Wanna play internet detective? You can use a command called <strong>dig</strong> to snoop on Google’s DNS details! It’s like asking the phone book to spill the tea on “google.com.”
+      </p>
+      <p>
+        Open a terminal (on Mac, Linux, or Windows with a tool like Git Bash) and type <code>dig google.com</code>. Hit enter, and you’ll get a report like this:
+        <pre>
+;; ANSWER SECTION:
+google.com.     300     IN      A       142.250.190.78
+        </pre>
+        This shows Google’s <span class="highlight">IP address</span> (e.g., 142.250.190.78), the “A” record type (for IPv4), and a TTL (time to live, like 300 seconds). It’s like finding Google’s exact address in the internet’s phone book! Try it—it’s a cool peek at DNS in action!
+      </p>
+      <p class="example">dig’s your spy tool to uncover Google’s web address!</p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>DNS Keeps the Web Connected! 🌐</h2>
+      <p>
+        And that’s the magic of <strong>DNS</strong>—the internet’s phone book turning names into addresses! From finding IPs with a speedy name hunt, breaking down domains into subdomains, second-level, and TLDs, to leaning on root servers and ICANN’s name-keeping, DNS makes browsing a breeze. Plus, snooping with <code>dig google.com</code> shows you the web’s inner workings. Next time you visit a site, give a cheer to DNS—it’s the web’s address-finding superstar! 🎉
+      </p>
+    </section>
+  </body>
+</html>
