@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TCP/IP Transport Layer: The Internet’s Delivery Crew</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h2>TCP/IP Transport Layer: The Internet’s Delivery Crew 🚚</h2>
+      <p>
+        Ever wonder how your messages, videos, or game moves zip across the
+        internet without getting lost? Meet the
+        <strong>TCP/IP transport layer</strong>, the internet’s delivery crew!
+        It’s like a team of super-organized couriers making sure your data gets
+        to the right app, in the right order, without traffic jams. We’ll check
+        out how it differs from the network layer, how it juggles data, keeps
+        traffic smooth, and uses cool tools like checksums and timers. Ready to
+        ride along with the delivery squad? Let’s hit the road! 🎉
+      </p>
+    </section>
+
+    <!-- Difference Between Network and Transport Layer -->
+    <section id="network-vs-transport">
+      <h2>Network vs. Transport Layer: The Road vs. the Courier 📍</h2>
+      <p>
+        The TCP/IP model has layers, like floors in a delivery warehouse, and
+        the <strong>network layer</strong> and
+        <strong>transport layer</strong> have different jobs. Think of the
+        network layer as the road map, and the transport layer as the courier
+        who uses it.
+      </p>
+      <p>
+        The <strong>network layer</strong> (handled by IP) is about getting data
+        from one device to another, like plotting a route from your phone to a
+        Netflix server using <span class="highlight">IP addresses</span>. It
+        doesn’t care what’s in the package or which app needs it. The
+        <strong>transport layer</strong> (handled by TCP or UDP) takes over to
+        deliver the data to the right app, like handing a package to the Netflix
+        app, not the email app. It adds reliability, order, and traffic control,
+        making sure the data arrives perfectly. Together, they’re a dream team!
+      </p>
+      <p class="example">
+        Network layer maps the route, transport layer delivers the goods!
+      </p>
+    </section>
+
+    <!-- Multiplexing and Demultiplexing -->
+    <section id="multiplexing-demultiplexing">
+      <h2>Multiplexing & Demultiplexing: The Sorting Hub 📦</h2>
+      <p>
+        Imagine a busy delivery hub where one truck carries packages for tons of
+        apps—browser, chat, games. The transport layer uses
+        <strong>multiplexing</strong> and <strong>demultiplexing</strong> to
+        sort this chaos, like a super-smart mailroom.
+      </p>
+      <p>
+        <strong>Multiplexing</strong> is when your device packs data from
+        different apps (like a YouTube video and a Discord message) into one
+        stream, using <span class="highlight">ports</span> (like mailbox
+        numbers) to tag each piece. The transport layer sends them over the
+        network. <strong>Demultiplexing</strong> happens at the other end, where
+        the receiving device unpacks the stream and delivers each piece to the
+        right app, using ports to sort them. For example, port 80 for web, 443
+        for secure web—TCP uses these to keep everything tidy!
+      </p>
+      <p class="example">
+        Multiplexing packs, demultiplexing sorts—apps get their mail!
+      </p>
+    </section>
+
+    <!-- Congestion Control in Transport Layer -->
+    <section id="congestion-control">
+      <h2>Congestion Control: Avoiding Traffic Jams 🚦</h2>
+      <p>
+        The internet’s like a busy highway, and too much data can cause a jam!
+        The transport layer, especially TCP, uses
+        <strong>congestion control</strong> to keep traffic flowing smoothly,
+        like a traffic cop directing cars.
+      </p>
+      <p>
+        When you stream a movie or send files, TCP watches the network for signs
+        of crowding—like slow responses or lost packets. If it’s getting
+        clogged, TCP slows down how fast it sends data, giving the network a
+        breather. If things are clear, it speeds up. This balancing act ensures
+        your Netflix doesn’t buffer forever and your emails don’t get stuck,
+        keeping the internet happy for everyone!
+      </p>
+      <p class="example">
+        Congestion control’s the cop keeping the internet’s roads clear!
+      </p>
+    </section>
+
+    <!-- Congestion Control Algorithms in TCP -->
+    <section id="congestion-algorithms">
+      <h2>TCP Congestion Control Algorithms: The Smart Drivers 🧠</h2>
+      <p>
+        TCP’s congestion control isn’t just random—it uses clever plans called
+        <strong>algorithms</strong> to decide how fast to send data. Think of
+        them as smart drivers who know when to brake or zoom!
+      </p>
+      <p>
+        One big algorithm is <strong>TCP Reno</strong>, which starts slow
+        (called slow start) to test the road, then speeds up if it’s clear. If a
+        packet gets lost (a sign of traffic), it cuts speed in half and tries
+        again carefully. Another is <strong>TCP Cubic</strong>, used in modern
+        systems, which is bolder, speeding up faster but still slowing down if
+        there’s trouble. For example, when you download a game, Cubic might help
+        TCP zip through a clear network but ease up if servers are busy. These
+        algorithms make TCP a pro at dodging internet jams!
+      </p>
+      <p class="example">
+        TCP’s algorithms drive smart to avoid network crashes!
+      </p>
+    </section>
+
+    <!-- What is Checksum? -->
+    <section id="checksum">
+      <h2>Checksum: The Package Checker 📋</h2>
+      <p>
+        Ever worry your data might get scrambled on its way? The transport layer
+        uses a <strong>checksum</strong> to check if your data arrives in one
+        piece, like a quality inspector for packages.
+      </p>
+      <p>
+        When TCP sends data, it calculates a number (the checksum) based on the
+        data’s bits and sticks it in the
+        <span class="highlight">packet header</span>. The receiving end
+        recalculates the checksum and compares it. If they match, the data’s
+        perfect! If not, TCP knows something got messed up (like a torn package)
+        and asks for a resend. For example, when you send an email, the checksum
+        ensures every word arrives as you wrote it. It’s TCP’s way of keeping
+        things flawless!
+      </p>
+      <p class="example">Checksum’s the inspector ensuring your data’s A-OK!</p>
+    </section>
+
+    <!-- What are Timers? -->
+    <section id="timers">
+      <h2>Timers: The Delivery Clock ⏰</h2>
+      <p>
+        TCP uses <strong>timers</strong> to keep deliveries on schedule, like a
+        clock watching how long packages take to arrive. If something’s late or
+        lost, timers tell TCP to take action.
+      </p>
+      <p>
+        The main timer is the <strong>retransmission timer</strong>. When TCP
+        sends a packet, it starts a countdown. If no “got it” signal
+        (acknowledgment) comes back before the timer runs out, TCP assumes the
+        packet’s lost and resends it. Another is the
+        <strong>keep-alive timer</strong>, which checks if a connection’s still
+        active during quiet moments, like pinging a friend to see if they’re
+        there. For example, when streaming a video, timers ensure missing chunks
+        get resent fast so you don’t miss the action!
+      </p>
+      <p class="example">
+        Timers keep TCP’s deliveries ticking like clockwork!
+      </p>
+    </section>
+
+    <!-- Sequence Numbers in Timers -->
+    <section id="sequence-numbers">
+      <h2>Sequence Numbers in Timers: The Package Labels 🏷️</h2>
+      <p>
+        To make timers work, TCP uses <strong>sequence numbers</strong>, like
+        labels on packages to track their order. They’re super important for
+        keeping data organized and spotting what’s missing.
+      </p>
+      <p>
+        Every packet TCP sends gets a unique sequence number, like “Packet #1,
+        #2, #3.” The receiver uses these to put data in the right order and send
+        back acknowledgments, like “Got #1!” If a timer runs out (say, for #2),
+        TCP sees the missing acknowledgment and resends that packet. For
+        example, when you download a song, sequence numbers ensure the music
+        arrives in order, and timers catch any dropped notes. It’s like a
+        tracking system for perfect deliveries!
+      </p>
+      <p class="example">
+        Sequence numbers label packets so timers save the day!
+      </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>Transport Layer Keeps the Internet Moving! 🏎️</h2>
+      <p>
+        And that’s the scoop on the <strong>TCP/IP transport layer</strong>—the
+        internet’s delivery crew making sure your data zooms to the right place!
+        From sorting apps with multiplexing, dodging jams with congestion
+        control, checking packages with checksums, to timing deliveries with
+        sequence numbers, it’s a busy squad keeping the web smooth. Next time
+        you stream, chat, or game, give a shout to the transport layer—it’s the
+        courier champ of the internet! 🌟
+      </p>
+    </section>
+  </body>
+</html>

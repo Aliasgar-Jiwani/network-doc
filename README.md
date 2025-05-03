@@ -30,6 +30,8 @@ Here’s what you’ll learn, with a little emoji flair:
 | Network Structure                    | 🧱       | The building blocks of any network.                        |
 | OSI Model (7 layers)                 | 📊       | A classic model to understand network layers.              |
 | TCP/IP Model (5 layers)              | 🌐       | The real-world working model of networking.                |
+| TCP/IP Model (Transport Layer)       | 📦       | How data is reliably delivered using TCP.                  |
+| UDP (User Datagram Protocol)         | 📨       | A lightweight, fast, and connectionless transport method.  |
 | Peer-to-Peer Architecture            | 🤝       | Sharing directly without a central boss.                   |
 | Networking Devices                   | ⚙️       | Routers, switches, hubs... what do they do?                |
 | Sockets                              | 🧩       | The endpoints that enable connections.                     |
