@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TCP: The Internet’s Careful Courier</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+      }
+      h1 {
+        color: #0288d1;
+        text-align: center;
+      }
+      h2 {
+        color: #0288d1;
+      }
+      p {
+        color: #333;
+      }
+      .highlight {
+        background-color: #e0f7fa;
+        padding: 5px;
+        border-radius: 3px;
+      }
+      .example {
+        font-style: italic;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h1>TCP: The Internet’s Careful Courier 📬</h1>
+      <p>
+        Wanna know why your emails or Netflix shows always show up just right?
+        Meet <strong>TCP</strong>, the Transmission Control Protocol, the
+        internet’s careful courier! It’s like a delivery worker who makes sure
+        every package arrives safe, in order, and perfect. We’ll check out how
+        TCP gets the job done, sets up connections, fixes mistakes, keeps
+        traffic smooth, chats both ways, and starts with a neat 3-step
+        handshake. Ready to see TCP in action? Let’s go! 🚚
+      </p>
+    </section>
+
+    <!-- How TCP Works -->
+    <section id="how-tcp-works">
+      <h2>How TCP Works: The Delivery Plan 📋</h2>
+      <p>
+        TCP is like a super-careful delivery worker who plans every trip. It’s
+        part of the internet’s <span class="highlight">transport layer</span>,
+        moving stuff like emails or videos between apps.
+      </p>
+      <p>
+        When you send an email, TCP chops your message into tiny
+        <span class="highlight">pieces</span>, numbers them, and sends them over
+        the web. At the other end, TCP gathers the pieces, checks for mistakes,
+        and puts them in order. If something’s missing, it asks for it again.
+        Like when you watch a movie on Netflix, TCP makes sure every scene plays
+        smoothly, no skips!
+      </p>
+      <p class="example">
+        TCP’s the plan that gets your stuff delivered right!
+      </p>
+    </section>
+
+    <!-- Connection-Oriented -->
+    <section id="connection-oriented">
+      <h2>Connection-Oriented: The Friendly Chat 📞</h2>
+      <p>
+        TCP loves to <strong>connect first</strong> before sending stuff, like
+        calling a buddy to make sure they’re home before dropping off a gift.
+        This makes it really trustworthy.
+      </p>
+      <p>
+        Before sending data, TCP sets up a link with a 3-step handshake (we’ll
+        talk about it soon!). This link stays open, like a phone call, so TCP
+        can track pieces, fix mistakes, and make sure everything gets there. For
+        example, when you sign into a website, TCP’s link keeps your session
+        steady. It’s way different from UDP, which just tosses stuff out!
+      </p>
+      <p class="example">TCP’s friendly chat makes sure nothing gets lost!</p>
+    </section>
+
+    <!-- Error Control -->
+    <section id="error-control">
+      <h2>Error Control: The Mistake Fixer 🛠️</h2>
+      <p>
+        TCP is like a worker who checks every package for oopsies. Its
+        <strong>error control</strong> makes sure your stuff arrives exactly as
+        you sent it, no mess-ups.
+      </p>
+      <p>
+        TCP uses a <span class="highlight">checker number</span> to spot
+        mistakes in pieces, like seeing if a package is torn. If something’s
+        wrong, TCP tosses it and asks for a new one. It also uses
+        <span class="highlight">order numbers</span> to keep pieces in line, so
+        if one’s missing, TCP grabs it again. Like when you email a photo, TCP
+        makes sure it looks perfect!
+      </p>
+      <p class="example">TCP’s mistake fixer keeps your stuff clean!</p>
+    </section>
+
+    <!-- Congestion Control -->
+    <section id="congestion-control">
+      <h2>Congestion Control: The Traffic Helper 🚦</h2>
+      <p>
+        The internet can get busy, like a crowded street, but TCP’s
+        <strong>traffic control</strong> keeps things moving. It’s like a helper
+        who stops pile-ups.
+      </p>
+      <p>
+        TCP watches for busy signals, like slow replies or lost pieces. If the
+        web’s packed, TCP slows down sending to ease the crowd. When it’s clear,
+        it speeds up. For example, when you stream a show, TCP tweaks things so
+        you don’t get stuck buffering. It uses clever tricks like Reno or Cubic
+        to stay smooth, helping everyone on the web!
+      </p>
+      <p class="example">TCP’s traffic helper keeps the web flowing!</p>
+    </section>
+
+    <!-- Full Duplex -->
+    <section id="full-duplex">
+      <h2>Full Duplex: Two-Way Talk 🗣️</h2>
+      <p>
+        TCP is <strong>full duplex</strong>, so it can send and get stuff at the
+        same time, like a phone where both people talk without waiting. It’s
+        super quick!
+      </p>
+      <p>
+        With full duplex, your device can send data (like typing a chat) and get
+        data (like seeing a reply) all at once. For example, in a Zoom call, TCP
+        sends your voice and gets your friend’s video together, so the talk
+        feels lively. It’s like a road with two lanes, one for each direction!
+      </p>
+      <p class="example">TCP’s two-way talk keeps chats super smooth!</p>
+    </section>
+
+    <!-- 3-Way Handshake -->
+    <section id="3-way-handshake">
+      <h2>3-Way Handshake: The Friendly Hello 👋</h2>
+      <p>
+        Before TCP sends stuff, it does a <strong>3-way handshake</strong>, like
+        a quick hello to make sure both sides are ready. It’s a three-step chat
+        that sets up a solid link!
+      </p>
+      <p>
+        Here’s the deal: 1. <strong>SYN (Start)</strong>: Your device (like your
+        phone) sends a “SYN” piece, like saying, “Yo, can we talk?” It adds a
+        random <span class="highlight">start number</span> (say, X) to track
+        stuff. 2. <strong>SYN-ACK (Start-Okay)</strong>: The server replies with
+        a “SYN-ACK” piece, saying, “Yup, I’m here!” It sends its own start
+        number (say, Y) and says, “Got your X!” with X+1. 3.
+        <strong>ACK (Okay)</strong>: Your phone sends an “ACK” back, saying,
+        “Sweet, we’re good!” It says, “Got your Y!” with Y+1, and the link’s
+        ready. For example, when you go to “amazon.com,” this handshake happens
+        super fast to connect your browser to the server, so every click works
+        perfectly. It’s like a quick “You there? Cool, me too!” before sending
+        stuff!
+      </p>
+      <p class="example">
+        TCP’s 3-way handshake is the friendly start to data chats!
+      </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>TCP Makes the Internet Awesome! 🌟</h2>
+      <p>
+        That’s the scoop on <strong>TCP</strong>—the internet’s careful courier
+        bringing your data safe and sound! With its smart delivery plan,
+        friendly connections, mistake fixing, traffic helping, two-way talks,
+        and a cool 3-step handshake, TCP’s the star behind your emails, streams,
+        and web visits. Next time you chat or watch a show, give TCP a
+        cheer—it’s the worker making the internet rock! 🎉
+      </p>
+    </section>
+  </body>
+</html>
