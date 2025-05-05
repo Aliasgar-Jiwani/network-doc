@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TCP/IP Network Layer: The Internet’s Map Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h1>TCP/IP Network Layer: The Internet’s Map Maker 🗺️</h1>
+      <p>
+        How does your message find its way from your phone to a server across
+        the world? Say hi to the <strong>TCP/IP network layer</strong>, the
+        internet’s map maker! It’s like a super-smart guide who picks the best
+        paths for your data to travel. We’ll see how it works, check out its
+        routing and forwarding lists, explore its step-by-step delivery, and
+        learn about its control tricks and path-finding styles. Ready to follow
+        the map? Let’s adventure! 🚀
+      </p>
+    </section>
+
+    <!-- How Network Layer Works -->
+    <section id="how-network-layer-works">
+      <h2>How the Network Layer Works: The Path Finder 📍</h2>
+      <p>
+        The network layer is like a guide who finds the best way to send your
+        stuff, like messages or videos, across the internet. It’s part of TCP/IP
+        and uses <span class="highlight">IP addresses</span> to do its job.
+      </p>
+      <p>
+        When you send a message, the network layer wraps it in a tiny
+        <span class="highlight">package</span> with an IP address, like a label
+        saying where it’s going (like a YouTube server). It picks a path through
+        the web’s roads, passing your package from one stop to the next until it
+        gets there. For example, when you watch a YouTube video, the network
+        layer makes sure every clip finds its way to your phone, no matter how
+        far!
+      </p>
+      <p class="example">
+        The network layer’s the guide getting your stuff where it needs to go!
+      </p>
+    </section>
+
+    <!-- Routing Table -->
+    <section id="routing-table">
+      <h2>Routing Table: The Big Map Book 📘</h2>
+      <p>
+        A <strong>routing table</strong> is like a big map book that a network
+        box (called a router) uses to decide where to send your packages. It’s
+        full of directions for different places.
+      </p>
+      <p>
+        Each line in the routing table says, “If a package is going to this
+        <span class="highlight">address</span>, send it this way.” For example,
+        if your package is headed to “netflix.com,” the table might say, “Send
+        it to Router B next.” Routers check this table to pick the best path,
+        like a guide choosing the fastest road. When you stream a show, the
+        routing table helps your video clips zip through the right stops!
+      </p>
+      <p class="example">
+        Routing tables are map books for finding the best web paths!
+      </p>
+    </section>
+
+    <!-- Forwarding Table -->
+    <section id="forwarding-table">
+      <h2>Forwarding Table: The Quick Cheat Sheet 📝</h2>
+      <p>
+        A <strong>forwarding table</strong> is like a quick cheat sheet that a
+        router uses to toss packages to the next stop super fast. It’s a simpler
+        version of the routing table.
+      </p>
+      <p>
+        The forwarding table lists just the key info: “This address goes to this
+        next stop.” It’s built from the routing table but made to be speedy, so
+        the router doesn’t waste time. For example, when you’re gaming online,
+        the forwarding table helps your moves zoom to the game server without
+        delay. It’s like a shortcut list for quick deliveries!
+      </p>
+      <p class="example">
+        Forwarding tables are cheat sheets for super-fast package tossing!
+      </p>
+    </section>
+
+    <!-- Hop-by-Hop Method -->
+    <section id="hop-by-hop">
+      <h2>Hop-by-Hop Method: The Relay Race 🏃</h2>
+      <p>
+        The network layer sends packages using the
+        <strong>hop-by-hop method</strong>, like a relay race where each runner
+        passes the baton to the next. Every stop is a “hop.”
+      </p>
+      <p>
+        When you send a message, it doesn’t zoom straight to the end. Instead,
+        each router looks at the package’s address, checks its routing table,
+        and hands it to the next router. This keeps going, hop by hop, until the
+        package reaches its home. For example, when you email a friend, your
+        message hops through lots of routers, like runners passing it along, to
+        get to their inbox!
+      </p>
+      <p class="example">
+        Hop-by-hop’s the relay race getting your stuff to the finish line!
+      </p>
+    </section>
+
+    <!-- Difference Between Routing Table and Forwarding Table -->
+    <section id="routing-vs-forwarding">
+      <h2>Routing vs. Forwarding Tables: Map Book vs. Shortcut 🗺️📋</h2>
+      <p>
+        Routing and forwarding tables both help routers, but they’re like a big
+        map book versus a quick shortcut list. Here’s how they’re different!
+      </p>
+      <p>
+        - <strong>Routing Table</strong>: The big map book with all the details.
+        It lists lots of paths, like “To this address, try this road or that
+        one.” It’s used to plan the best route and can be updated slowly. -
+        <strong>Forwarding Table</strong>: The shortcut list with just the next
+        stop. It’s simpler, like “This address goes here next,” so routers can
+        send packages crazy fast. It’s made from the routing table but built for
+        speed. For example, when you watch Netflix, the routing table plans the
+        path, but the forwarding table makes each hop super quick, so your show
+        doesn’t lag!
+      </p>
+      <p class="example">
+        Routing tables plan, forwarding tables speed things up!
+      </p>
+    </section>
+
+    <!-- Control Plane -->
+    <section id="control-plane">
+      <h2>Control Plane: The Brainy Planner 🧠</h2>
+      <p>
+        The <strong>control plane</strong> is like the brainy planner behind the
+        network layer, figuring out how to set up paths for your packages. It’s
+        the boss of the routing table!
+      </p>
+      <p>
+        The control plane decides which paths are best by talking to other
+        routers and updating the routing table. It’s like a guide chatting with
+        friends to find the quickest roads. For example, when you visit
+        “google.com,” the control plane makes sure the routing table knows the
+        best way to Google’s server, so your search loads fast. It’s the smart
+        part that keeps the network organized!
+      </p>
+      <p class="example">
+        Control plane’s the brain keeping paths ready for your stuff!
+      </p>
+    </section>
+
+    <!-- Static Routing vs. Dynamic Routing -->
+    <section id="static-dynamic-routing">
+      <h2>Static vs. Dynamic Routing: Set Paths vs. Smart Paths 🌟</h2>
+      <p>
+        The control plane can use two ways to pick paths:
+        <strong>static routing</strong> and <strong>dynamic routing</strong>.
+        They’re like using a fixed map versus a smart GPS!
+      </p>
+      <p>
+        - <strong>Static Routing</strong>: This is like a fixed map you never
+        change. Someone sets the paths in the routing table by hand, and they
+        stay the same. It’s simple and good for small networks, like a home
+        Wi-Fi, but if a road’s blocked, it won’t know! -
+        <strong>Dynamic Routing</strong>: This is like a smart GPS that updates
+        itself. Routers talk to each other, share road news, and change the
+        routing table if a path’s busy or down. It’s great for big networks,
+        like the internet, so your YouTube video finds the fastest way even if a
+        router’s offline! For example, static routing might work for your home
+        printer, but dynamic routing helps your Google searches zip through the
+        web’s busy roads!
+      </p>
+      <p class="example">
+        Static’s a fixed map, dynamic’s a GPS for web adventures!
+      </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h1>TCP/IP Network Layer Makes the Web Go! 🌐</h1>
+      <p>
+        That’s the story of the <strong>TCP/IP network layer</strong>—the
+        internet’s map maker guiding your data across the web! With its
+        path-finding tricks, map books, shortcut lists, relay races, brainy
+        planning, and fixed or smart paths, it’s the hero behind your messages,
+        videos, and searches. Next time you stream a show or email a friend,
+        give a cheer to the network layer—it’s the guide making the internet
+        awesome! 🎉
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IP: The Internet’s Address Book</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 10px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #0288d1;
+        color: white;
+      }
+      ul {
+        margin: 10px 0;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h1>IP: The Internet’s Address Book 📒</h1>
+      <p>
+        Ever think about how your phone sends a video to a friend far away?
+        That’s the magic of <strong>IP</strong>, the Internet Protocol, the
+        web’s address book! It gives every gadget a special address and guides
+        data to the right spot. We’ll check out what IP does, its two types
+        (IPv4 and IPv6), how addresses are split and given out, and what’s
+        inside its data packages. Ready to explore the web’s address system?
+        Let’s dive in! 🎉
+      </p>
+    </section>
+
+    <!-- What is IP -->
+    <section id="what-is-ip">
+      <h2>What’s IP? The Web’s Address Helper 🏠</h2>
+      <p>
+        IP is like a big address book that gives every device—like your laptop
+        or a game server—a unique address. It’s part of the
+        <span class="highlight">network layer</span> in the internet’s system,
+        called TCP/IP.
+      </p>
+      <p>
+        When you send a message, IP puts it in a little
+        <span class="highlight">package</span> with two addresses: one for the
+        sender (you) and one for the receiver (like a YouTube server). Then, it
+        helps the package hop through the web’s roads to get there. For example,
+        when you watch a YouTube video, IP makes sure the video clips find your
+        phone, no matter where the server is!
+      </p>
+      <p class="example">
+        IP’s the helper sending your stuff to the right address!
+      </p>
+    </section>
+
+    <!-- IPv4 -->
+    <section id="ipv4">
+      <h2>IPv4: The Old Address Style 📬</h2>
+      <p>
+        <strong>IPv4</strong> is the classic way to make addresses for the
+        internet. It’s been used for ages and gives devices short addresses made
+        of four numbers.
+      </p>
+      <p>
+        An IPv4 address looks like 192.168.0.1. Each number is between 0 and
+        255, and they’re split by dots. It uses 32 bits (like 32 tiny switches),
+        which makes about 4 billion addresses. That’s a lot, but with so many
+        phones, laptops, and smart TVs, we’re running out! For example, your
+        Wi-Fi router might have an IPv4 address like 192.168.1.1 to connect your
+        gadgets at home.
+      </p>
+      <p class="example">
+        IPv4’s the old-school address keeping the web going!
+      </p>
+    </section>
+
+    <!-- IPv6 -->
+    <section id="ipv6">
+      <h2>IPv6: The New Giant Address Style 📮</h2>
+      <p>
+        <strong>IPv6</strong> is the new, bigger way to make addresses. It was
+        created to give the web tons more space for all our gadgets.
+      </p>
+      <p>
+        An IPv6 address looks like 2001:0db8:85a3:0000:0000:8a2e:0370:7334, with
+        eight groups of numbers and letters separated by colons. It uses 128
+        bits, which means it can make trillions and trillions of
+        addresses—enough for every device forever! It’s also faster and safer
+        for the web. For example, new smart devices, like a smart light bulb,
+        often use IPv6 to connect easily.
+      </p>
+      <p class="example">IPv6’s the giant address style for the future!</p>
+    </section>
+
+    <!-- Subnetting -->
+    <section id="subnetting">
+      <h2>Subnetting: Making Mini-Networks 🏘️</h2>
+      <p>
+        <strong>Subnetting</strong> is like splitting a big town into small
+        neighborhoods to keep things neat. It breaks a big network into smaller
+        chunks called subnets.
+      </p>
+      <p>
+        Each subnet has its own group of addresses, so gadgets in one subnet
+        (like your home Wi-Fi) don’t get mixed up with others (like a coffee
+        shop’s Wi-Fi). This makes the web faster, safer, and easier to manage.
+        For example, a school might use subnetting to keep student computers in
+        one subnet and teacher computers in another, so data stays organized.
+      </p>
+      <p class="example">
+        Subnetting’s like making mini-towns for web neatness!
+      </p>
+    </section>
+
+    <!-- How IP Addresses Are Assigned -->
+    <section id="ip-assignment">
+      <h2>How Addresses Get Picked: The Address Boss 🎟️</h2>
+      <p>
+        IP addresses aren’t just random numbers—they’re given out carefully,
+        like handing out house numbers in a town. There’s a system to make sure
+        every gadget gets the right address.
+      </p>
+      <p>
+        A big group called <span class="highlight">ICANN</span> gives out chunks
+        of addresses to internet companies, like AT&T or Comcast. Those
+        companies then give addresses to your Wi-Fi router. Your router uses a
+        helper called <strong>DHCP</strong> to pick addresses for your phone or
+        laptop, like 192.168.0.2. Some gadgets, like servers, get fixed
+        addresses that never change (static), while your phone gets a new one
+        each time it joins Wi-Fi (dynamic). For example, YouTube’s server keeps
+        the same address, but your tablet’s changes at a new café!
+      </p>
+      <p class="example">Addresses are picked to keep the web tidy and fair!</p>
+    </section>
+
+    <!-- Breaking Down 192.168.2/30 -->
+    <section id="ip-breakdown">
+      <h2>Breaking Down 192.168.2/30: The Address Puzzle 🧩</h2>
+      <p>
+        Let’s take an address like 192.168.2 with a /30 subnet and split it into
+        parts: the network part, subnet part, and device part (called host ID).
+        It’s like reading a house’s street and number!
+      </p>
+      <p>
+        - <strong>Network Part</strong>: The 192.168.2 is like the street name,
+        showing the big network this address lives in, like your home Wi-Fi’s
+        main group. - <strong>Subnet (/30)</strong>: The /30 means 30 bits are
+        used for the network and subnet, leaving 2 bits for devices. Those 2
+        bits make 4 addresses total: 1 for the network (like 192.168.2.0), 1 for
+        sending to everyone (broadcast, like 192.168.2.3), and 2 for devices
+        (like 192.168.2.1 and 192.168.2.2). It’s a super-tiny subnet! -
+        <strong>Device Part (Host ID)</strong>: The last number (like .2 in
+        192.168.2.2) picks the exact gadget, like your phone. With /30, only two
+        gadgets can have addresses in this subnet. For example, in
+        192.168.2.0/30, your router might be 192.168.2.1, and your laptop
+        192.168.2.2. It’s like a street with just two houses!
+      </p>
+      <p class="example">
+        192.168.2/30’s a tiny puzzle for a couple of gadgets!
+      </p>
+    </section>
+
+    <!-- Class of IP Addresses -->
+    <section id="ip-classes">
+      <h2>IP Address Groups: The Address Types 🏷️</h2>
+      <p>
+        IPv4 addresses are sorted into five types, called
+        <strong>classes A, B, C, D, E</strong>, like different kinds of houses
+        in the web’s town. Each type has a special job.
+      </p>
+      <p>
+        - <strong>Class A</strong>: For huge networks (starts with 0-127, like
+        10.0.0.1). Used by giant groups, like internet companies, with tons of
+        gadgets. - <strong>Class B</strong>: For medium networks (starts with
+        128-191, like 172.16.0.1). Good for places like colleges with lots of
+        computers. - <strong>Class C</strong>: For small networks (starts with
+        192-223, like 192.168.0.1). Perfect for homes or small shops, like your
+        Wi-Fi. - <strong>Class D</strong>: For group messages (starts with
+        224-239, like 239.0.0.1). Used to send data to many gadgets, like live
+        video streams. - <strong>Class E</strong>: For experiments (starts with
+        240-255). Not used much, just for testing. For example, your home’s
+        192.168.0.1 is a Class C address, great for a small Wi-Fi network!
+      </p>
+      <p class="example">IP classes are like house types for web addresses!</p>
+    </section>
+
+    <!-- Subnet Masking -->
+    <section id="subnet-masking">
+      <h2>Subnet Masking: The Address Divider 🎨</h2>
+      <p>
+        A <strong>subnet mask</strong> is like a divider that splits an IP
+        address into two parts: the network part and the gadget part. It helps
+        keep the web organized.
+      </p>
+      <p>
+        The mask looks like 255.255.255.0, where 255 says “this is the network
+        part” and 0 says “this is the gadget part.” For example, with the
+        address 192.168.1.5 and mask 255.255.255.0, 192.168.1 is the network
+        (like the street), and .5 is the gadget (like the house). A mask like
+        /30 (255.255.255.252) makes a tiny subnet with just 4 addresses. It’s
+        like coloring a picture to show which parts belong together!
+      </p>
+      <p class="example">Subnet masks divide addresses to keep things neat!</p>
+    </section>
+
+    <!-- IP Packets -->
+    <section id="ip-packets">
+      <h2>IP Packages: The Web’s Little Boxes 📦</h2>
+      <p>
+        IP sends data in small <strong>packages</strong> called packets, like
+        little boxes with labels. Each packet has a
+        <span class="highlight">label</span> (called a header) that’s 20 bytes
+        long in IPv4 to help it get to the right place.
+      </p>
+      <p>
+        The label has important bits: - <strong>IP Version</strong>: Says if
+        it’s IPv4 or IPv6 (like “this is an IPv4 box”). -
+        <strong>Length</strong>: Shows how big the whole package is. -
+        <strong>Identification</strong>: A number to keep track of packages if
+        they’re split up. - <strong>Flags</strong>: Says if the package can be
+        broken into pieces or not. - <strong>Protocol</strong>: Tells what’s
+        next, like TCP (for web pages) or UDP (for videos). -
+        <strong>Checksum</strong>: A check to make sure the label isn’t messed
+        up. - <strong>Addresses</strong>: The sender’s and receiver’s IP
+        addresses, like return and delivery addresses. -
+        <strong>TTL (Time to Live)</strong>: A number that counts hops (stops)
+        to stop lost packages from circling forever. For example, when you
+        stream a Netflix show, each video piece travels in a packet with a label
+        guiding it to your tablet!
+      </p>
+      <p class="example">
+        IP packages are little boxes zipping data around the web!
+      </p>
+    </section>
+
+    <!-- IPv4 vs. IPv6 Comparison -->
+    <section id="ipv4-vs-ipv6">
+      <h2>IPv4 vs. IPv6: Old School vs. New School 📬📮</h2>
+      <p>
+        IPv4 and IPv6 are like the old and new ways to write addresses for the
+        internet. They both help gadgets connect, but they’re super different.
+        Let’s break it down clearly with a table to compare them, then list
+        what’s awesome and not-so-awesome about each!
+      </p>
+      <h3>Comparison Table</h3>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>IPv4</th>
+          <th>IPv6</th>
+        </tr>
+        <tr>
+          <td>Address Size</td>
+          <td>32 bits (4 numbers, like 192.168.0.1)</td>
+          <td>128 bits (8 groups, like 2001:0db8::7334)</td>
+        </tr>
+        <tr>
+          <td>Number of Addresses</td>
+          <td>About 4 billion (not enough now)</td>
+          <td>Trillions and trillions (enough forever)</td>
+        </tr>
+        <tr>
+          <td>Address Look</td>
+          <td>Four numbers with dots (easy to read)</td>
+          <td>Numbers and letters with colons (longer)</td>
+        </tr>
+        <tr>
+          <td>Speed</td>
+          <td>Good, but needs extra steps sometimes</td>
+          <td>Faster, with simpler paths</td>
+        </tr>
+        <tr>
+          <td>Security</td>
+          <td>Needs extra setup to be safe</td>
+          <td>Built-in safety features</td>
+        </tr>
+        <tr>
+          <td>Setup</td>
+          <td>Uses tricks like NAT to save addresses</td>
+          <td>No NAT needed, simpler setup</td>
+        </tr>
+      </table>
+      <h3>What’s Awesome and Not-So-Awesome</h3>
+      <p><strong>IPv4: The Old School</strong></p>
+      <ul>
+        <li>
+          <strong>Awesome</strong>:
+          <ul>
+            <li>Used everywhere—works on all old and new gadgets.</li>
+            <li>Easy to set up for small networks, like home Wi-Fi.</li>
+            <li>Simple address style, easy to read (like 192.168.0.1).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Not-So-Awesome</strong>:
+          <ul>
+            <li>Running out of addresses—only 4 billion isn’t enough.</li>
+            <li>Needs tricks like NAT, which can slow things down.</li>
+            <li>Extra work to make it safe from hackers.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>IPv6: The New School</strong></p>
+      <ul>
+        <li>
+          <strong>Awesome</strong>:
+          <ul>
+            <li>Tons of addresses—enough for every gadget ever!</li>
+            <li>Faster web paths, so videos and games load quicker.</li>
+            <li>Built-in safety, so it’s harder for hackers to mess with.</li>
+            <li>No NAT needed, making setups simpler.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Not-So-Awesome</strong>:
+          <ul>
+            <li>Not all old gadgets work with it yet.</li>
+            <li>Long addresses are harder to read and type.</li>
+            <li>Switching from IPv4 to IPv6 takes time and work.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        For example, your home router probably uses IPv4 because it’s so common,
+        but new smart homes with tons of gadgets, like smart lights and
+        thermostats, are starting to use IPv6 for extra addresses and speed!
+      </p>
+      <p class="example">
+        IPv4’s the classic way, IPv6’s the future—both make the web work!
+      </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>IP Keeps the Web Connected! 🌐</h2>
+      <p>
+        That’s the story of <strong>IP</strong>—the internet’s address book
+        guiding your data to the right spot! From old-school IPv4 to giant IPv6,
+        splitting networks with subnetting, picking addresses, sorting them into
+        classes, dividing with masks, and sending little labeled packages, IP’s
+        the star behind your chats, streams, and searches. Next time you watch a
+        video or send a message, give a cheer to IP—it’s the address hero of the
+        web! 🎉
+      </p>
+    </section>
+  </body>
+</html>
