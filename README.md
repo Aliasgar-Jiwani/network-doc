@@ -30,8 +30,6 @@ Here’s what you’ll learn, with a little emoji flair:
 | Network Structure                    | 🧱       | The building blocks of any network.                        |
 | OSI Model (7 layers)                 | 📊       | A classic model to understand network layers.              |
 | TCP/IP Model (5 layers)              | 🌐       | The real-world working model of networking.                |
-| TCP/IP Model (Transport Layer)       | 📦       | How data is reliably delivered using TCP.                  |
-| UDP (User Datagram Protocol)         | 📨       | A lightweight, fast, and connectionless transport method.  |
 | Peer-to-Peer Architecture            | 🤝       | Sharing directly without a central boss.                   |
 | Networking Devices                   | ⚙️       | Routers, switches, hubs... what do they do?                |
 | Sockets                              | 🧩       | The endpoints that enable connections.                     |
@@ -40,6 +38,13 @@ Here’s what you’ll learn, with a little emoji flair:
 | Cookies                              | 🍪       | Tiny bits of info websites store in your browser.          |
 | How Email Works                      | 📧       | What happens after you click "Send"?                       |
 | DNS (Domain Name System)             | 🗂️       | How google.com becomes an IP address.                      |
+| TCP/IP Model (Transport Layer)       | 📦       | How data is reliably delivered using TCP.                  |
+| UDP (User Datagram Protocol)         | 📨       | A lightweight, fast, and connectionless transport method.  |
+| TCP (Transmission Control Protocol)  | 🧳       | Ensures your data gets there safely and in order.          |
+| TCP (Network Layer)                  | 🪝       | Where data gets wrapped in IP and routed.                  |
+| IP (Internet Protocol)               | 🧭       | Addresses and delivers data packets across networks.       |
+| Middle Boxes                         | 🚧       | Devices like firewalls, NATs, and proxies in action.       |
+| TCP (Data Link Layer)                | 🧵       | Frames, MAC addresses, and reliable link-to-link delivery. |
 
 ---
 
@@ -51,9 +56,9 @@ Visit : https://aliasgar-jiwani.github.io/network-doc/
 
 ## 🎨 Tech Stack
 
-- **HTML5** – for structure
-- **CSS3** – for styling (custom + Google Fonts)
-- **JavaScript** – for dynamic content loading
+- **HTML5** – for structure  
+- **CSS3** – for styling (custom + Google Fonts)  
+- **JavaScript** – for dynamic content loading  
 
 ---
 

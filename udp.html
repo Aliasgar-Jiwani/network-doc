@@ -19,9 +19,16 @@
   <body>
     <!-- Introduction -->
     <section id="intro">
-      <h1>UDP: The Internet's Speedy Messenger 🏃‍♂️</h1>
+      <h2>UDP: The Internet's Speedy Messenger 🏃‍♂️</h2>
       <p>
-        Ever wonder how your live streams or online games zip along so fast? Meet <strong>UDP</strong>, the User Datagram Protocol, the internet's super-speedy messenger! Unlike its careful cousin TCP, UDP tosses data like quick notes, prioritizing speed over perfection. It's perfect for stuff like video calls or gaming, but it comes with quirks like lost or jumbled messages. We'll dive into why UDP's so fast, its connectionless vibe, and how its packets work, plus a cool diagram to show it off. Ready to race with UDP? Let's sprint! 🎉
+        Ever wonder how your live streams or online games zip along so fast?
+        Meet <strong>UDP</strong>, the User Datagram Protocol, the internet's
+        super-speedy messenger! Unlike its careful cousin TCP, UDP tosses data
+        like quick notes, prioritizing speed over perfection. It's perfect for
+        stuff like video calls or gaming, but it comes with quirks like lost or
+        jumbled messages. We'll dive into why UDP's so fast, its connectionless
+        vibe, and how its packets work, plus a cool diagram to show it off.
+        Ready to race with UDP? Let's sprint! 🎉
       </p>
     </section>
 
@@ -29,25 +36,43 @@
     <section id="data-delivery">
       <h2>UDP's Wild Ride: Data Might Get Lost, Changed, or Jumbled 🎢</h2>
       <p>
-        UDP is like a speedy bike courier who zooms through the city but doesn't double-check the delivery. It's all about speed, which means things can get a bit wild!
+        UDP is like a speedy bike courier who zooms through the city but doesn't
+        double-check the delivery. It's all about speed, which means things can
+        get a bit wild!
       </p>
       <p>
-        - <strong>Data May or May Not Be Delivered</strong>: UDP doesn't check if packets arrive. Some might get lost, like a note blowing away in the wind.  
-        - <strong>Data May Change</strong>: Packets could get scrambled en route, like a message getting smudged.  
-        - <strong>Data May Not Be in Order</strong>: Packets might arrive out of sequence, like getting page 3 before page 1 of a comic.  
-        For example, in a live Twitch stream, UDP sends video chunks fast. If a few get lost or jumbled, the stream keeps going, and you might just miss a tiny moment—no biggie!
+        - <strong>Data May or May Not Be Delivered</strong>: UDP doesn't check
+        if packets arrive. Some might get lost, like a note blowing away in the
+        wind. - <strong>Data May Change</strong>: Packets could get scrambled en
+        route, like a message getting smudged. -
+        <strong>Data May Not Be in Order</strong>: Packets might arrive out of
+        sequence, like getting page 3 before page 1 of a comic. For example, in
+        a live Twitch stream, UDP sends video chunks fast. If a few get lost or
+        jumbled, the stream keeps going, and you might just miss a tiny
+        moment—no biggie!
       </p>
-      <p class="example">UDP's a speedy messenger who doesn't sweat the small stuff!</p>
+      <p class="example">
+        UDP's a speedy messenger who doesn't sweat the small stuff!
+      </p>
     </section>
 
     <!-- Why Use UDP? -->
     <section id="why-use-udp">
       <h2>Why Use UDP? Speed Is King! ⚡</h2>
       <p>
-        So why pick UDP when it's so carefree? Because it's crazy fast! UDP skips the fuss of checking and rechecking, making it perfect for stuff where speed beats perfection.
+        So why pick UDP when it's so carefree? Because it's crazy fast! UDP
+        skips the fuss of checking and rechecking, making it perfect for stuff
+        where speed beats perfection.
       </p>
       <p>
-        UDP shines in real-time apps like <strong>video calls</strong> (e.g., Zoom), <strong>online gaming</strong> (e.g., Fortnite), or <strong>live streaming</strong> (e.g., YouTube Live). In these cases, a tiny glitch is better than a laggy connection. For example, in a game, UDP sends your moves super quick, so you don't freeze mid-battle, even if a few moves arrive out of order. It's also used in <strong>DNS lookups</strong> for fast name-to-address matches. UDP's the go-to for zippy, no-drama data!
+        UDP shines in real-time apps like <strong>video calls</strong> (e.g.,
+        Zoom), <strong>online gaming</strong> (e.g., Fortnite), or
+        <strong>live streaming</strong> (e.g., YouTube Live). In these cases, a
+        tiny glitch is better than a laggy connection. For example, in a game,
+        UDP sends your moves super quick, so you don't freeze mid-battle, even
+        if a few moves arrive out of order. It's also used in
+        <strong>DNS lookups</strong> for fast name-to-address matches. UDP's the
+        go-to for zippy, no-drama data!
       </p>
       <p class="example">UDP's the champ for fast, live internet fun!</p>
     </section>
@@ -56,10 +81,19 @@
     <section id="connectionless">
       <h2>Connectionless Protocol: No Handshake Needed 🤝❌</h2>
       <p>
-        Unlike TCP, which sets up a formal connection like a phone call, UDP is <strong>connectionless</strong>—it's like tossing postcards into a mailbox without checking if they'll arrive. No setup, no chit-chat, just send and go!
+        Unlike TCP, which sets up a formal connection like a phone call, UDP is
+        <strong>connectionless</strong>—it's like tossing postcards into a
+        mailbox without checking if they'll arrive. No setup, no chit-chat, just
+        send and go!
       </p>
       <p>
-        When you use UDP, there's no "Hello, are you there?" handshake. Your device fires off packets to the <span class="highlight">destination</span>, and that's it. This makes UDP super lightweight and fast, perfect for apps like Skype calls, where waiting for a connection would slow things down. The downside? No guarantee the postcard lands in the right box, but for speed, it's worth it!
+        When you use UDP, there's no "Hello, are you there?" handshake. Your
+        device fires off packets to the
+        <span class="highlight">destination</span>, and that's it. This makes
+        UDP super lightweight and fast, perfect for apps like Skype calls, where
+        waiting for a connection would slow things down. The downside? No
+        guarantee the postcard lands in the right box, but for speed, it's worth
+        it!
       </p>
       <p class="example">UDP's the postcard-tosser for quick, no-fuss sends!</p>
     </section>
@@ -68,56 +102,187 @@
     <section id="udp-packet">
       <h2>UDP Packet: The Speedy Note 📝</h2>
       <p>
-        A UDP packet, or datagram, is like a quick note with just enough info to get where it's going. It's lean and mean, with a tiny <span class="highlight">header</span> and the actual data, keeping things fast. Here's what's inside:
+        A UDP packet, or datagram, is like a quick note with just enough info to
+        get where it's going. It's lean and mean, with a tiny
+        <span class="highlight">header</span> and the actual data, keeping
+        things fast. Here's what's inside:
       </p>
       <p>
-        - <strong>Source Port Number</strong> (2 bytes): The sender's "return address," like port 12345, so the receiver knows who sent it.  
-        - <strong>Destination Port Number</strong> (2 bytes): The receiver's "mailbox," like port 53 for DNS, to reach the right app.  
-        - <strong>Length of Datagram</strong> (2 bytes): The total size of the packet (header + data), so the receiver knows what's coming.  
-        - <strong>Checksum</strong> (2 bytes): A check to spot errors, like a scribble to ensure the note isn't smudged (optional in IPv4).  
-        - <strong>Data</strong>: The actual message, like your game move or video chunk.  
-        The total size can be up to <strong>2^16 bytes</strong> (65,536 bytes), but it's usually much smaller to stay zippy. Check out the diagram below to see it in action!
+        - <strong>Source Port Number</strong> (2 bytes): The sender's "return
+        address," like port 12345, so the receiver knows who sent it. -
+        <strong>Destination Port Number</strong> (2 bytes): The receiver's
+        "mailbox," like port 53 for DNS, to reach the right app. -
+        <strong>Length of Datagram</strong> (2 bytes): The total size of the
+        packet (header + data), so the receiver knows what's coming. -
+        <strong>Checksum</strong> (2 bytes): A check to spot errors, like a
+        scribble to ensure the note isn't smudged (optional in IPv4). -
+        <strong>Data</strong>: The actual message, like your game move or video
+        chunk. The total size can be up to <strong>2^16 bytes</strong> (65,536
+        bytes), but it's usually much smaller to stay zippy. Check out the
+        diagram below to see it in action!
       </p>
-      <svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" aria-labelledby="udpTitle udpDesc" role="img" text-rendering="optimizeLegibility" preserveAspectRatio="xMidYMid meet">
+      <svg
+        width="600"
+        height="250"
+        viewBox="0 0 600 250"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-labelledby="udpTitle udpDesc"
+        role="img"
+        text-rendering="optimizeLegibility"
+        preserveAspectRatio="xMidYMid meet"
+      >
         <title id="udpTitle">UDP Packet Structure</title>
-        <desc id="udpDesc">Diagram showing the structure of a UDP packet with header fields and data section</desc>
-        
+        <desc id="udpDesc">
+          Diagram showing the structure of a UDP packet with header fields and
+          data section
+        </desc>
+
         <!-- Background container -->
-        <rect x="50" y="20" width="500" height="210" fill="#e0f7fa" stroke="#0288d1" stroke-width="2" rx="10" aria-label="UDP packet container"/>
-        
+        <rect
+          x="50"
+          y="20"
+          width="500"
+          height="210"
+          fill="#e0f7fa"
+          stroke="#0288d1"
+          stroke-width="2"
+          rx="10"
+          aria-label="UDP packet container"
+        />
+
         <!-- Header label -->
-        <text x="300" y="40" fill="#333" font-size="14" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">Header (8 bytes)</text>
-        
+        <text
+          x="300"
+          y="40"
+          fill="#333"
+          font-size="14"
+          text-anchor="middle"
+          font-family="Arial, sans-serif"
+          font-weight="bold"
+        >
+          Header (8 bytes)
+        </text>
+
         <!-- Header fields -->
         <g aria-label="UDP Header fields">
           <!-- Source Port -->
-          <rect x="70" y="50" width="100" height="60" fill="#0288d1" rx="5"/>
-          <text x="120" y="80" fill="white" font-size="16" text-anchor="middle" font-family="Arial, sans-serif">Source Port</text>
-          <text x="120" y="100" fill="white" font-size="12" text-anchor="middle" font-family="Arial, sans-serif">2 bytes</text>
-          
+          <rect x="70" y="50" width="100" height="60" fill="#0288d1" rx="5" />
+          <text
+            x="120"
+            y="80"
+            fill="white"
+            font-size="16"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            Source Port
+          </text>
+          <text
+            x="120"
+            y="100"
+            fill="white"
+            font-size="12"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            2 bytes
+          </text>
+
           <!-- Destination Port -->
-          <rect x="180" y="50" width="100" height="60" fill="#0288d1" rx="5"/>
-          <text x="230" y="80" fill="white" font-size="16" text-anchor="middle" font-family="Arial, sans-serif">Dest. Port</text>
-          <text x="230" y="100" fill="white" font-size="12" text-anchor="middle" font-family="Arial, sans-serif">2 bytes</text>
-          
+          <rect x="180" y="50" width="100" height="60" fill="#0288d1" rx="5" />
+          <text
+            x="230"
+            y="80"
+            fill="white"
+            font-size="16"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            Dest. Port
+          </text>
+          <text
+            x="230"
+            y="100"
+            fill="white"
+            font-size="12"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            2 bytes
+          </text>
+
           <!-- Length -->
-          <rect x="290" y="50" width="100" height="60" fill="#0288d1" rx="5"/>
-          <text x="340" y="80" fill="white" font-size="16" text-anchor="middle" font-family="Arial, sans-serif">Length</text>
-          <text x="340" y="100" fill="white" font-size="12" text-anchor="middle" font-family="Arial, sans-serif">2 bytes</text>
-          
+          <rect x="290" y="50" width="100" height="60" fill="#0288d1" rx="5" />
+          <text
+            x="340"
+            y="80"
+            fill="white"
+            font-size="16"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            Length
+          </text>
+          <text
+            x="340"
+            y="100"
+            fill="white"
+            font-size="12"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            2 bytes
+          </text>
+
           <!-- Checksum -->
-          <rect x="400" y="50" width="100" height="60" fill="#0288d1" rx="5"/>
-          <text x="450" y="80" fill="white" font-size="16" text-anchor="middle" font-family="Arial, sans-serif">Checksum</text>
-          <text x="450" y="100" fill="white" font-size="12" text-anchor="middle" font-family="Arial, sans-serif">2 bytes</text>
+          <rect x="400" y="50" width="100" height="60" fill="#0288d1" rx="5" />
+          <text
+            x="450"
+            y="80"
+            fill="white"
+            font-size="16"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            Checksum
+          </text>
+          <text
+            x="450"
+            y="100"
+            fill="white"
+            font-size="12"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            2 bytes
+          </text>
         </g>
-        
+
         <!-- Total size label -->
-        <text x="500" y="140" fill="#333" font-size="14" text-anchor="end" font-family="Arial, sans-serif">Total: Up to 2^16 bytes</text>
-        
+        <text
+          x="500"
+          y="140"
+          fill="#333"
+          font-size="14"
+          text-anchor="end"
+          font-family="Arial, sans-serif"
+        >
+          Total: Up to 2^16 bytes
+        </text>
+
         <!-- Data section -->
         <g aria-label="UDP Data section">
-          <rect x="70" y="130" width="430" height="80" fill="#0288d1" rx="5"/>
-          <text x="285" y="180" fill="white" font-size="16" text-anchor="middle" font-family="Arial, sans-serif">Data (Variable)</text>
+          <rect x="70" y="130" width="430" height="80" fill="#0288d1" rx="5" />
+          <text
+            x="285"
+            y="180"
+            fill="white"
+            font-size="16"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+          >
+            Data (Variable)
+          </text>
         </g>
       </svg>
       <p class="example">UDP packets are lean notes built for speed!</p>
@@ -127,7 +292,13 @@
     <section id="conclusion">
       <h2>UDP Keeps the Internet Zooming! 🏍️</h2>
       <p>
-        And that's the deal with <strong>UDP</strong>—the internet's speedy messenger racing to deliver your data! With its carefree vibe, it might lose or jumble packets, but its lightning-fast, connectionless style makes it perfect for live streams, games, and quick lookups. Packed with a simple header and data, UDP's lean packets (up to 2^16 bytes) zoom through the web. Next time you're gaming or streaming, give a high-five to UDP—it's the zippy courier of the internet! 🌟
+        And that's the deal with <strong>UDP</strong>—the internet's speedy
+        messenger racing to deliver your data! With its carefree vibe, it might
+        lose or jumble packets, but its lightning-fast, connectionless style
+        makes it perfect for live streams, games, and quick lookups. Packed with
+        a simple header and data, UDP's lean packets (up to 2^16 bytes) zoom
+        through the web. Next time you're gaming or streaming, give a high-five
+        to UDP—it's the zippy courier of the internet! 🌟
       </p>
     </section>
   </body>

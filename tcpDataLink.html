@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TCP/IP Data Link Layer: The Internet’s Local Courier</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <!-- Introduction -->
+    <section id="intro">
+      <h2>TCP/IP Data Link Layer: The Internet’s Local Courier 📬</h2>
+      <p>
+        Ever wonder how your Wi-Fi gets data from your phone to your router without a hitch? That’s the <strong>TCP/IP Data Link Layer</strong>, the web’s local courier! It handles the nitty-gritty of moving data between gadgets in the same small network, like your home. We’ll check out how it works, what DHCP does, its special addresses, how it packs and checks data, and how ARP figures out who’s who, plus what MAC addresses are. Ready to explore the local delivery crew? Let’s zip in! 🎉
+      </p>
+    </section>
+
+    <!-- How Data Link Layer Works -->
+    <section id="how-data-link-layer-works">
+      <h2>How the Data Link Layer Works: The Local Delivery 📍</h2>
+      <p>
+        The Data Link Layer is like a local courier who moves data between gadgets in the same small area, like your home Wi-Fi or office network. It’s the hands-on part of TCP/IP that makes sure data gets from one device to the next.
+      </p>
+      <p>
+        When your phone sends a message, the Data Link Layer takes the data, wraps it in a <span class="highlight">package</span> called a frame, and delivers it to the next stop, like your router. It makes sure the data arrives safely and in the right order, fixing any mix-ups. For example, when you stream a video, the Data Link Layer gets each video chunk from your router to your tablet without mistakes!
+      </p>
+      <p class="example">The Data Link Layer’s the local courier for nearby deliveries!</p>
+    </section>
+
+    <!-- Role of DHCP -->
+    <section id="dhcp-role">
+      <h2>DHCP’s Job: The Address Giver 🎟️</h2>
+      <p>
+        <strong>DHCP</strong>, or Dynamic Host Configuration Protocol, is like a friendly helper in the Data Link Layer that hands out IP addresses to gadgets so they can join the network.
+      </p>
+      <p>
+        When you connect your phone to Wi-Fi, DHCP talks to your router and says, “Here’s an address, like 192.168.0.2, so you can send and get data!” It makes sure every gadget gets a unique address without any fuss. DHCP also sets up other stuff, like which router to use. For example, when you join a café’s Wi-Fi, DHCP quickly gives your laptop an address to start browsing!
+      </p>
+      <p class="example">DHCP’s the address giver making network joins super easy!</p>
+    </section>
+
+    <!-- Data Link Layer Address -->
+    <section id="data-link-address">
+      <h2>Data Link Layer Address: The Local Name 🏷️</h2>
+      <p>
+        The Data Link Layer uses special addresses, called <strong>MAC addresses</strong>, to name gadgets in a small network, like your home Wi-Fi. These are different from IP addresses, which work across the whole internet.
+      </p>
+      <p>
+        A MAC address is like a local name tag for your gadget, such as 00:1A:2B:3C:4D:5E. It’s used to send data between nearby devices, like from your phone to your router. For example, when you print a photo, the Data Link Layer uses your printer’s MAC address to make sure the photo data goes to the right place in your home network!
+      </p>
+      <p class="example">Data Link addresses are local name tags for nearby gadgets!</p>
+    </section>
+
+    <!-- Framing -->
+    <section id="framing">
+      <h2>Framing: Packing the Data 🎁</h2>
+      <p>
+        <strong>Framing</strong> is like wrapping data in a neat package, called a frame, so it can travel safely between gadgets in the same network.
+      </p>
+      <p>
+        The Data Link Layer takes data from the upper layers (like a video chunk), adds a label with stuff like the sender’s and receiver’s MAC addresses, and seals it in a frame. This frame also has a checker to spot mistakes. For example, when you send a message to your smart TV, the Data Link Layer wraps it in a frame to make sure it gets there cleanly and correctly!
+      </p>
+      <p class="example">Framing’s like gift-wrapping data for safe local trips!</p>
+    </section>
+
+    <!-- Error Detection -->
+    <section id="error-detection">
+      <h2>Error Detection: Spotting Mistakes 🕵️</h2>
+      <p>
+        <strong>Error detection</strong> is how the Data Link Layer checks if data arrives without any oopsies, like a courier making sure a package isn’t torn.
+      </p>
+      <p>
+        The layer adds a special checker, called a <span class="highlight">CRC</span> (Cyclic Redundancy Check), to each frame. When the frame reaches the next gadget, the Data Link Layer checks the CRC to see if the data’s okay. If it’s messed up, the frame gets tossed, and the gadget might ask for it again. For example, when you download a song, error detection makes sure every note arrives perfectly on your phone!
+      </p>
+      <p class="example">Error detection’s the mistake-spotter keeping data clean!</p>
+    </section>
+
+    <!-- Address Resolution Protocol (ARP) -->
+    <section id="arp">
+      <h2>ARP: Finding the Right Gadget 🕵️‍♂️</h2>
+      <p>
+        <strong>ARP</strong>, or Address Resolution Protocol, is like a detective in the Data Link Layer that figures out which MAC address matches an IP address in a local network.
+      </p>
+      <p>
+        Here’s how ARP works in a local network (LAN), like your home Wi-Fi:
+        <ul>
+          <li><strong>Asking</strong>: When your laptop wants to send data to another gadget, like your printer with IP 192.168.0.3, it needs the printer’s MAC address. Your laptop sends an ARP question to everyone on the LAN, saying, “Who has 192.168.0.3?”</li>
+          <li><strong>Answering</strong>: The printer hears the question and replies, “That’s me! My MAC address is 00:1A:2B:3C:4D:5E.”</li>
+          <li><strong>Saving</strong>: Your laptop saves the IP-to-MAC match in a little list (ARP table) so it doesn’t have to ask again for a while.</li>
+          <li><strong>Sending</strong>: Now your laptop uses the printer’s MAC address to send the data in a frame, and the printer gets it!</li>
+        </ul>
+        For example, when you print a homework page, ARP helps your laptop find your printer’s MAC address so the Data Link Layer can deliver the page data right to it!
+      </p>
+      <p class="example">ARP’s the detective matching IP addresses to local names!</p>
+    </section>
+
+    <!-- MAC Address -->
+    <section id="mac-address">
+      <h2>MAC Address: The Gadget’s Name Tag 🪪</h2>
+      <p>
+        A <strong>MAC address</strong> is like a permanent name tag for every gadget’s network card, used by the Data Link Layer to send data in a small network.
+      </p>
+      <p>
+        MAC addresses look like 00:1A:2B:3C:4D:5E, with six groups of letters and numbers separated by colons. They’re built into gadgets at the factory and stay the same forever. The Data Link Layer uses them to know exactly which gadget to send data to, like your router picking your tablet’s MAC address to send a video chunk. For example, when you connect to Wi-Fi, your phone’s MAC address tells the router, “Hey, I’m here!”
+      </p>
+      <p class="example">MAC addresses are name tags for your gadgets’ network cards!</p>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>Data Link Layer Keeps Local Networks Rocking! 🌐</h2>
+      <p>
+        That’s the story of the <strong>TCP/IP Data Link Layer</strong>—the internet’s local courier making sure data zips between nearby gadgets! From delivering packages, handing out addresses with DHCP, using MAC name tags, wrapping data in frames, spotting mistakes, and finding gadgets with ARP, this layer’s the hero of your home Wi-Fi. Next time you print, stream, or browse, give a cheer to the Data Link Layer—it’s the local delivery star! 🎉
+      </p>
+    </section>
+  </body>
+</html>
